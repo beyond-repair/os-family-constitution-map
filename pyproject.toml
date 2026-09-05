@@ -1,0 +1,8 @@
+[project]
+name = "os-family-constitution-map"
+version = "0.1.0"
+description = "Claim-capped identity map for Sovereign/Legion/Reality OS repos"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
