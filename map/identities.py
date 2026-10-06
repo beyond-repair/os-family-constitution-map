@@ -5,6 +5,16 @@ from __future__ import annotations
 SNAPSHOT_DATE = "2026-09-05"
 FAMILY = "OS_CONSTITUTION"
 
+# Census presence recheck. Does not replace SNAPSHOT_DATE and is not a tree audit.
+CENSUS_RECHECK_DATE = "2026-10-06"
+CENSUS_TOTAL = 83
+CENSUS_PRESENCE = {
+    "Sovereign-OS": {"present": True, "private": False, "archived": False},
+    "SovereignOS": {"present": True, "private": True, "archived": False},
+    "LegionOS": {"present": True, "private": False, "archived": False},
+    "RealityOS": {"present": True, "private": False, "archived": False},
+}
+
 CLAIM_CAPS = (
     "NAME_ONLY",
     "METADATA_ONLY",
@@ -57,4 +67,5 @@ FORBIDDEN_CLAIMS = (
     "SovereignOS == Sovereign-OS",
     "LegionOS governs sunder agents",
     "RealityOS is a runtime for SEEM",
+    "census presence is a tree merge",
 )

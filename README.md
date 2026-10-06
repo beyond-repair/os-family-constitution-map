@@ -33,6 +33,7 @@ Closes queue items:
 - Each identity has a claim cap. None is a shipped kernel.
 - `SovereignOS` is marked `AMBIGUOUS_DUPLICATE` of `Sovereign-OS` until a SUPERSEDES proof exists.
 - This repository is a deterministic JSON + validator, not a live crawler.
+- Sweep-259 census recheck (2026-10-06, search total 83): all four names were present. `SovereignOS` remained private. None were archived. Snapshot date stays `2026-09-05`. Presence is not a tree audit and not a merge.
 
 ## Not claimed
 
@@ -40,6 +41,7 @@ Closes queue items:
 - Equivalence of trees
 - Merge of source
 - Governance of agents by any OS repo
+- Census presence as a SUPERSEDES proof
 
 ## Run
 
