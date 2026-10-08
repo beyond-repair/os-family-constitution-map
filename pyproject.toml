@@ -1,8 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "os-family-constitution-map"
 version = "0.1.1"
 description = "Claim-capped identity map for Sovereign/Legion/Reality OS repos"
+readme = "README.md"
 requires-python = ">=3.10"
+license = { file = "LICENSE" }
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+os-family-map = "map.engine:main"
+
+[tool.setuptools]
+packages = ["map"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

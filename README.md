@@ -45,11 +45,32 @@ Closes queue items:
 
 ## Run
 
+Needs Python 3.10 or newer. Nothing here touches the network.
+
 ```bash
-pip install -r requirements.txt
-python -m map.engine
+git clone https://github.com/beyond-repair/os-family-constitution-map.git
+cd os-family-constitution-map
+python3 -m venv .venv && . .venv/bin/activate
+python -m pip install -e ".[dev]"
+python -m map            # same as python -m map.engine or the os-family-map command
+python -m map --json     # the locked map as JSON
 python -m pytest -q
 ```
+
+Expected `python -m map` output (exit 0):
+
+```
+identities=4 snapshot=2026-09-05 recheck=2026-10-06 census_total=83
+  Sovereign-OS   cap=SURFACE_API_UNVERIFIED           status=CANONICAL_CANDIDATE
+  SovereignOS    cap=METADATA_ONLY                    status=AMBIGUOUS_DUPLICATE possible_duplicate_of=Sovereign-OS
+  LegionOS       cap=METADATA_ONLY                    status=STUB
+  RealityOS      cap=SURFACE_API_UNVERIFIED           status=DISTINCT_NAME_UNAUDITED
+PASS: os-family-constitution-map valid
+```
+
+If the locked data drifts (a fifth identity, a kernel claim cap, `SovereignOS` promoted out of `AMBIGUOUS_DUPLICATE`, a URL outside `beyond-repair`, a missing forbidden claim), the command prints `FAIL:` lines and exits 1.
+
+Without installing, `pip install -r requirements.txt` then `python -m map.engine` and `python -m pytest -q` from the repository root also work (this is what CI runs).
 
 
 ---
